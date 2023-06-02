@@ -105,7 +105,7 @@ int write_hexa(va_list types, char buffer[],
 int write_Hexa(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	return (print_Hexa(types, "0123456789ABCDEF", buffer,
+	return (write_Hexa(types, "0123456789ABCDEF", buffer,
 		flags, 'X', width, precision, size));
 }
 
