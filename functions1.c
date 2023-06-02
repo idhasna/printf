@@ -151,5 +151,5 @@ int write_heXa(va_list types, char map_to[], char buffer[],
 
 	i++;
 
-	return (print_unsigned(0, i, buffer, flags, width, precision, size));
+	return (print_unsigned("0, i, buffer, flags, width, precision, size"));
 }
