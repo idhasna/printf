@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * handle_write_char - writes the string .
+ * handle_print_char - writes the string .
  * @c: the type of characters .
  * @buffer: a buffer array for printing .
  * @flags:  it calculates the flags activated .
@@ -11,7 +11,7 @@
  *
  * Return: the number of characters to be  printed.
  */
-int handle_write_char(char c, char buffer[],
+int handle_print_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
 { /* char is stored at left and padding at buffer's right */
 	int i = 0;
@@ -109,7 +109,7 @@ int print_num(int ind, char buffer[],
 		for (i = 1; i < width - length + 1; i++)
 			buffer[i] = padd;
 		buffer[i] = '\0';
-		if (flags & flag_minus && padd == ' ')/* Assign extra char to left of buffer */
+		if (flags & flag_minus && padd == ' ')/* extra char to left of buffer */
 		{
 			if (extra_c)
 				buffer[--ind] = extra_c;

@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_pointer - writes the value of a pointer  .
+ * write_pointer - writes the value of a pointer  .
  * @types: the list of arguments .
  * @buffer: a buffer array for printing .
  * @flags:  it calculates the flags activated .
@@ -10,7 +10,7 @@
  * @size: the size specification .
  * Return: the number of printed characters .
  */
-int print_pointer(va_list types, char buffer[],
+int write_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char extra_c = 0, padd = ' ';
@@ -37,7 +37,7 @@ int print_pointer(va_list types, char buffer[],
 		length++;
 	}
 
-	if ((flags & flag_sero) && !(flags & flag_minus))
+	if ((flags & flag_zero) && !(flags & flag_minus))
 		padd = '0';
 	if (flags & flag_plus)
 		extra_c = '+', length++;
@@ -47,12 +47,12 @@ int print_pointer(va_list types, char buffer[],
 	ind++;
 
 	/*return (write(1, &buffer[i], BUF_SIZE - i - 1));*/
-	return (write_pointer(buffer, ind, length,
+	return (print_pointer(buffer, ind, length,
 		width, flags, padd, extra_c, padd_start));
 }
 
 /**
- * print_non_printable - writes ASCII codes in hexa for non printable chars .
+ * write_non_printable - writes ASCII codes in hexa for non printable chars .
  * @types: the list of arguments .
  * @buffer: a buffer array for printing .
  * @flags:  it calculates the flags activated .
@@ -61,7 +61,7 @@ int print_pointer(va_list types, char buffer[],
  * @size: the size specification .
  * Return: the number of printed characters .
  */
-int print_non_printable(va_list types, char buffer[],
+int write_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i = 0, offset = 0;
@@ -77,7 +77,7 @@ int print_non_printable(va_list types, char buffer[],
 
 	while (str[i] != '\0')
 	{
-		if (is_printable(str[i]))
+		if (_isprintable(str[i]))
 			buffer[i + offset] = str[i];
 		else
 			offset += append_hexa_code(str[i], buffer, i + offset);
@@ -91,7 +91,7 @@ int print_non_printable(va_list types, char buffer[],
 }
 
 /**
- * print_reverse - writes the string reversed .
+ * write_rev - writes the string reversed .
  * @types: the list of arguments .
  * @buffer: a buffer array for printing .
  * @flags:  it calculates the flags activated .
@@ -101,7 +101,7 @@ int print_non_printable(va_list types, char buffer[],
  * Return: the numbers of printed characters .
  */
 
-int print_rev(va_list types, char buffer[],
+int write_rev(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char *str;
@@ -135,7 +135,7 @@ int print_rev(va_list types, char buffer[],
 
 
 /**
- * print_rot13 - writes a string in rot13 .
+ * write_rot13 - writes a string in rot13 .
  * @types: the list of arguments .
  * @buffer: Buffer array to handle print
  * @flags:  it calculates the flags activated .
@@ -144,7 +144,7 @@ int print_rev(va_list types, char buffer[],
  * @size: the size specification .
  * Return: the numbers of printed characters .
  */
-int print_rot13(va_list types, char buffer[],
+int write_rot13(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char x;

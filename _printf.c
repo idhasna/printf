@@ -55,7 +55,7 @@ int _printf(const char *format, ...)
 /**
  * print_buffer - If the buffer exists prints its contents .
  * @buffer: The array of characters .
- * @buff_ind: Length represented by the index to add the next character .
+ * @buff_ind: The length is represented by the index to add the next character . 
  */
 void print_buffer(char buffer[], int *buff_ind)
 {
