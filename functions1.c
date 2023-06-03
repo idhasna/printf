@@ -76,7 +76,7 @@ int write_octal(va_list types, char buffer[],
 }
 
 /**
- * write_hexa - writes an unsigned number in hexadecimal .
+ * write_hexad - writes an unsigned number in hexadecimal .
  * @types: the list of arguments .
  * @buffer: a buffer array to print .
  * @flags:  it calculates active flags .
@@ -85,10 +85,10 @@ int write_octal(va_list types, char buffer[],
  * @size: the size specification .
  * Return: a number of printed charcters .
  */
-int write_hexa(va_list types, char buffer[],
+int write_hexad(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	return (write_hexa(types, "01ab", buffer,
+	return (write_hexa(types, "0,a", buffer,
 		flags, 'x', width, precision, size));
 }
 
@@ -105,7 +105,7 @@ int write_hexa(va_list types, char buffer[],
 int write_Hexa(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	return (write_Hexa(types, "01AB", buffer,
+	return (write_Hexa(types, "0,A", buffer,
 		flags, 'X', width, precision, size));
 }
 

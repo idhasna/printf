@@ -62,7 +62,7 @@ int write_unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int write_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int write_hexa(va_list types, char buffer[],
+int write_hexad(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int write_Hexa(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
