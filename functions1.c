@@ -88,7 +88,7 @@ int write_octal(va_list types, char buffer[],
 int write_hexad(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	return (write_hexa(types, "0,a", buffer,
+	return (write_hexad(types, buffer,
 		flags, 'x', width, precision, size));
 }
 
@@ -105,7 +105,7 @@ int write_hexad(va_list types, char buffer[],
 int write_Hexa(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	return (write_Hexa(types, "0,A", buffer,
+	return (write_Hexa(types, buffer,
 		flags, 'X', width, precision, size));
 }
 
