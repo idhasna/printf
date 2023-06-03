@@ -89,7 +89,7 @@ int write_hexad(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	return (write_hexad(types, buffer,
-		flags, 'x', width, precision, size));
+		flags, width, precision, size));
 }
 
 /**
@@ -106,7 +106,7 @@ int write_Hexa(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	return (write_Hexa(types, buffer,
-		flags, 'X', width, precision, size));
+		flags, width, precision, size));
 }
 
 /**
